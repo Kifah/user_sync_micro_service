@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  user_service:
+    container_name: user_service
+    build:
+      context: ./user_service
+    volumes:
+     - ./user_service:/user_service
+    working_dir: /user_service/code
