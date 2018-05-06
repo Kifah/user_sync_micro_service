@@ -1,7 +1,8 @@
 version: '3.3'
+
+
+
 services:
-
-
   user_service:
     container_name: user_service
     build:
@@ -10,16 +11,28 @@ services:
      - ./user_service:/user_service
     working_dir: /user_service/code
     networks:
-      - main
+      - user
     depends_on:
       - event_bus
+
+  log_service:
+    container_name: log_service
+    build:
+     context: ./log_service
+    volumes:
+       - ./log_service:/log_service
+    working_dir: /log_service/code
+    networks:
+        - user
+    depends_on:
+        - event_bus
 
 
   event_bus:
     container_name: event_bus
     image: spotify/kafka
     networks:
-      - main
+      - user
 
 networks:
-  main:
+  user:

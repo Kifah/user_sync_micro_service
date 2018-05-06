@@ -4,12 +4,12 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use App\Command\UserCreatedCommand;
+use LoggerApp\Command\UserCreatedLogListenerCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
 
 
-$application->add(new UserCreatedCommand());
+$application->add(new UserCreatedLogListenerCommand());
 
 $application->run();

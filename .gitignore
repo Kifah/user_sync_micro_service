@@ -1,1 +1,38 @@
 /user_service/code/vendor/
+/log_service/code/vendor/
+log_service/code/tests/
+Would skip repository log_service/code/vendor/myclabs/deep-copy
+Would skip repository log_service/code/vendor/hamcrest/hamcrest-php
+Would skip repository log_service/code/vendor/mockery/mockery
+Would skip repository log_service/code/vendor/doctrine/instantiator
+Would skip repository log_service/code/vendor/phpunit/php-timer
+Would skip repository log_service/code/vendor/phpunit/php-token-stream
+Would skip repository log_service/code/vendor/phpunit/phpunit-mock-objects
+Would skip repository log_service/code/vendor/phpunit/phpunit
+Would skip repository log_service/code/vendor/phpunit/php-code-coverage
+Would skip repository log_service/code/vendor/phpunit/php-file-iterator
+log_service/code/vendor/phpunit/php-text-template
+Would skip repository log_service/code/vendor/phar-io/manifest
+log_service/code/vendor/phar-io/version
+Would skip repository log_service/code/vendor/symfony/console
+Would skip repository log_service/code/vendor/symfony/polyfill-mbstring
+Would skip repository log_service/code/vendor/kwn/php-rdkafka-stubs
+Would skip repository log_service/code/vendor/webmozart/assert
+Would skip repository log_service/code/vendor/phpspec/prophecy
+Would skip repository log_service/code/vendor/sebastian/comparator
+Would skip repository log_service/code/vendor/sebastian/global-state
+Would skip repository log_service/code/vendor/sebastian/object-enumerator
+Would skip repository log_service/code/vendor/sebastian/object-reflector
+Would skip repository log_service/code/vendor/sebastian/code-unit-reverse-lookup
+Would skip repository log_service/code/vendor/sebastian/diff
+Would skip repository log_service/code/vendor/sebastian/recursion-context
+Would skip repository log_service/code/vendor/sebastian/environment
+Would skip repository log_service/code/vendor/sebastian/exporter
+Would skip repository log_service/code/vendor/sebastian/resource-operations
+log_service/code/vendor/sebastian/version
+log_service/code/vendor/autoload.php
+log_service/code/vendor/bin
+log_service/code/vendor/theseer
+log_service/code/vendor/composer
+log_service/code/vendor/phpdocumentor
+user_service/code/tests/
