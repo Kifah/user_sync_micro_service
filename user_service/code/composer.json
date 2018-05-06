@@ -1,10 +1,8 @@
 {
   "name": "kifah/kifah",
-  "type": "phpunit/phpunit",
   "require": {
     "symfony/console": "^4.1@dev",
-    "enqueue/rdkafka": "^0.8.0@dev",
-    "enqueue/enqueue": "^0.8.0@dev"
+    "kwn/php-rdkafka-stubs": "dev-master"
   },
   "autoload": {
     "psr-4": {

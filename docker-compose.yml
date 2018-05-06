@@ -20,9 +20,6 @@ services:
     image: spotify/kafka
     networks:
       - main
-    environment:
-      TOPICS: user_created
-
 
 networks:
   main:
