@@ -1,6 +1,5 @@
 /user_service/code/vendor/
 /log_service/code/vendor/
-log_service/code/tests/
 Would skip repository log_service/code/vendor/myclabs/deep-copy
 Would skip repository log_service/code/vendor/hamcrest/hamcrest-php
 Would skip repository log_service/code/vendor/mockery/mockery
@@ -35,4 +34,3 @@ log_service/code/vendor/bin
 log_service/code/vendor/theseer
 log_service/code/vendor/composer
 log_service/code/vendor/phpdocumentor
-user_service/code/tests/
