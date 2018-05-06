@@ -28,11 +28,73 @@ services:
         - event_bus
 
 
-  event_bus:
-    container_name: event_bus
-    image: spotify/kafka
+#  event_bus:
+#    container_name: event_bus
+#    image: spotify/kafka
+#    networks:
+#      - user
+#      - legacy_user_internal
+#    ports:
+#      - 2181:2181
+#      - 2888:2888
+#      - 3888:3888
+#      - 9092:9092
+
+
+
+#-------------Legacy Sync Network section
+
+
+  zookeeper:
+    image: debezium/zookeeper:0.7
+    ports:
+     - 2181:2181
+     - 2888:2888
+     - 3888:3888
     networks:
-      - user
+      - legacy_user_internal
+
+  event_bus:
+    image: debezium/kafka:0.7
+    ports:
+     - 9092:9092
+    environment:
+     - ZOOKEEPER_CONNECT=zookeeper:2181
+    networks:
+        - user
+        - legacy_user_internal
+    depends_on:
+      - zookeeper
+
+
+  mysql:
+    image: debezium/example-mysql:0.7
+    ports:
+     - 3306:3306
+    environment:
+     - MYSQL_ROOT_PASSWORD=debezium
+     - MYSQL_USER=mysqluser
+     - MYSQL_PASSWORD=mysqlpw
+    networks:
+      - legacy_user_internal
+
+  connect:
+    image: debezium/connect:0.7
+    ports:
+     - 8083:8083
+     - 5005:5005
+    links:
+     - event_bus
+     - mysql
+    environment:
+     - BOOTSTRAP_SERVERS=event_bus:9092
+     - GROUP_ID=1
+     - CONFIG_STORAGE_TOPIC=my_connect_configs
+     - OFFSET_STORAGE_TOPIC=my_connect_offsets
+    networks:
+      - legacy_user_internal
+
 
 networks:
   user:
+  legacy_user_internal:
