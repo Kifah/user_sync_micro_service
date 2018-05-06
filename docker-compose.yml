@@ -1,5 +1,7 @@
 version: '3.3'
 services:
+
+
   user_service:
     container_name: user_service
     build:
@@ -7,3 +9,20 @@ services:
     volumes:
      - ./user_service:/user_service
     working_dir: /user_service/code
+    networks:
+      - main
+    depends_on:
+      - event_bus
+
+
+  event_bus:
+    container_name: event_bus
+    image: spotify/kafka
+    networks:
+      - main
+    environment:
+      TOPICS: user_created
+
+
+networks:
+  main:

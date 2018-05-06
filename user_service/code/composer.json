@@ -6,9 +6,16 @@
     "enqueue/rdkafka": "^0.8.0@dev",
     "enqueue/enqueue": "^0.8.0@dev"
   },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Vendor\\Namespace\\": ""
+    }
+  },
   "require-dev": {
     "mockery/mockery": "^1.0@dev",
     "phpunit/phpunit": "^7.2@dev"
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "license": "MIT"
 }
