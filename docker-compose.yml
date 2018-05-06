@@ -10,10 +10,10 @@ services:
     volumes:
      - ./user_service:/user_service
     working_dir: /user_service/code
+    links:
+     - event_bus
     networks:
       - user
-    depends_on:
-      - event_bus
 
   log_service:
     container_name: log_service
@@ -24,7 +24,7 @@ services:
     working_dir: /log_service/code
     networks:
         - user
-    depends_on:
+    links:
         - event_bus
 
 
@@ -45,30 +45,26 @@ services:
 #-------------Legacy Sync Network section
 
 
-  zookeeper:
-    image: debezium/zookeeper:0.7
-    ports:
-     - 2181:2181
-     - 2888:2888
-     - 3888:3888
-    networks:
-      - legacy_user_internal
 
   event_bus:
-    image: debezium/kafka:0.7
+    container_name: event_bus
+#    image: debezium/kafka
+    image: landoop/fast-data-dev
     ports:
      - 9092:9092
-    environment:
-     - ZOOKEEPER_CONNECT=zookeeper:2181
+     - 3030:3030
     networks:
         - user
         - legacy_user_internal
-    depends_on:
-      - zookeeper
+    environment:
+     - CONFIG_STORAGE_TOPIC=my_connect_configs"
+     - OFFSET_STORAGE_TOPIC=my_connect_offsets
+     - CONNECTORS=org.apache.kafka.connect.tools.MockSinkConnector
+
 
 
   mysql:
-    image: debezium/example-mysql:0.7
+    image: debezium/example-mysql
     ports:
      - 3306:3306
     environment:
