@@ -1,0 +1,19 @@
+{
+  "name": "kifah/kifah",
+  "require": {
+    "symfony/console": "^4.1@dev",
+    "kwn/php-rdkafka-stubs": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "LegacyApp\\": "src/",
+      "Vendor\\Namespace\\": ""
+    }
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.0@dev",
+    "phpunit/phpunit": "^7.2@dev"
+  },
+  "minimum-stability": "dev",
+  "license": "MIT"
+}

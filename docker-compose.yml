@@ -27,6 +27,18 @@ services:
     links:
         - event_bus
 
+  legacy_user_service:
+    container_name: legacy_user_service
+    build:
+      context: ./legacy_user_service
+    volumes:
+     - ./legacy_user_service:/legacy_user_service
+    working_dir: /legacy_user_service/code
+    links:
+     - event_bus
+    networks:
+      - legacy_user_internal
+
 
 #  event_bus:
 #    container_name: event_bus

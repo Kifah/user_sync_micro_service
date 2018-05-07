@@ -35,3 +35,4 @@ log_service/code/vendor/bin
 log_service/code/vendor/theseer
 log_service/code/vendor/composer
 log_service/code/vendor/phpdocumentor
+/legacy_user_service/code/vendor/
