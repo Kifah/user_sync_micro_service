@@ -5,4 +5,6 @@ infrastructure.
 
 ## General Concept
 
-[general concept]: https://preview.ibb.co/nqCTuS/Bildschirmfoto_2018_05_09_um_08_17_26.png "communication amongst services"
+![general concept](https://preview.ibb.co/nqCTuS/Bildschirmfoto_2018_05_09_um_08_17_26.png "communication amongst services")
+
+
