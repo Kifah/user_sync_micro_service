@@ -31,7 +31,7 @@ It includes the following architecture and software concepts:
 ## Getting Started:
 you need to have [docker-compose installed](https://docs.docker.com/compose/install/)
 
-then simply run `docker-compose up
+then simply run `docker-compose up`
 
 
 ## Todo
