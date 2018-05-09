@@ -38,4 +38,4 @@ then simply run `docker-compose up`
 * unit testing
 * concrete CRUD processes in the `user_service`
 * more complex processing in the `legacy_user_service`
-* integrate CI/CD through Jenkins of travis-ci
+* integrate CI/CD through Jenkins or travis-ci
