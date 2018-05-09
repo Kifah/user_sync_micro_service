@@ -27,6 +27,7 @@ It includes the following architecture and software concepts:
 
 
 
+
 ## Getting Started:
 you need to have [docker-compose installed](https://docs.docker.com/compose/install/)
 
